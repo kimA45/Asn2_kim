@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Products Data</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+
+    <h1>All Products Data</h1>
+
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Reviews</th>
+        </tr>
+        {{#each products}} 
+           <!-- <tr class="{{#if (isEqual reviews 0)}}highlight{{/if}}"> --> <!--Step 7 -->
+           <!--Step 8 -->
+            <tr class="{{#if (notEqual reviews 0)}}highlight{{/if}}">
+                <td>
+                    <img src="{{imgUrl}}" alt="{{title}}" width="50" height="50">
+                    {{title}}
+                </td>
+                <td>{{categoryName}}</td>
+                <td>${{price}}</td>
+                <td>{{stars}}</td>
+                <td>{{replaceZeroReviews reviews}}</td>
+            </tr>
+        {{/each}}
+    </table>
+
+</body>
+</html>
